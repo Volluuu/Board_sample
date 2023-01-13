@@ -8,14 +8,14 @@ import data.dto.UserDto;
 public interface UserMapper {
 	
 	//이메일을 통한 유저 정보
-	public UserDto getUserInfo(String email);
+	public UserDto getUserInfo(String user_email);
 
     public UserDto getUserByNum(int user_num);
 
     public void insertUser(UserDto dto);
 
 //    // 이메일 중복 체크
-//    public int emailCheck(String email);
+    public int emailCheck(String user_email);
 //
 //    // 핸드폰 중복 체크
 //    public int idCheck(String user_id);

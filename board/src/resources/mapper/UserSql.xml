@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="data.mapper.UserMapper">
-    <select id="getUserInfo" parameterType="String" resultType="UserDto">
+    <select id="getUserInfo" parameterType="String" resultType="data.dto.UserDto">
        	select *
-   		from "user"
+   		from user
         where user_email = #{user_email}
     </select>
-    <select id="getUserByNum" parameterType="int" resultType="UserDto">
+    <select id="getUserByNum" parameterType="int" resultType="data.dto.UserDto">
         select *
-        from ""user
+        from user
         where user_num = #{user_num}
     </select>
-    <insert id="insertUser" parameterType="UserDto">
-        insert into "user" 
+    <insert id="insertUser" parameterType="data.dto.UserDto">
+        insert into user
         (user_name,user_pass,user_email,user_id) 
         values (#{user_name},#{user_pass},#{user_email},#{user_id})
     </insert>
     <!--    아이디 중복 체크-->
+    <select id="emailCheck" parameterType="String" resultType="int">
+        select count(*)
+        from user
+        where user_email = #{user_email}
+    </select>
    
     <!--    회원 탈퇴-->
     <delete id="deleteUser" parameterType="int">
         delete
-        from "user""
+        from user
         where user_num = #{user_num}
     </delete>
- 
 </mapper>
