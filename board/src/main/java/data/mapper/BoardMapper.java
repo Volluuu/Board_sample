@@ -20,5 +20,5 @@ public interface BoardMapper {
 	//수정
 	public void updateBoard(BoardDto dto);
 	//삭제
-	public void deleteBoard(BoardDto dto);
+	public void deleteBoard(int user_num,int board_num);
 }
