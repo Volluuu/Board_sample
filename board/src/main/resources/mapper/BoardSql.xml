@@ -10,6 +10,13 @@
    		from "board"
         where user_num = #{user_num}
     </select>
+    
+    <select id="boardByUser" parameterType="Map" resultType="BoardDto">
+        select *
+   		from "board"
+        where user_num = #{user_num}
+    </select>
+    
     <insert id="insertBoard" parameterType="BoardDto">
         insert into "board"
         (board_title,board_content,user_num,board_writeday) 
