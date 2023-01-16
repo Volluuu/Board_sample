@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="data.mapper.UserMapper">
+
+	<select id="getTestUser" resultType="data.dto.UserDto">
+		select *
+		from "user"
+		where user_num = 1
+	</select>
+	
+	<!-- 로그인 -->
+	<select id="logIn" resultType="data.dto.UserDto">
+		select * from "user" where user_id = #{user_id} and user_pass = #{user_pass}
+	</select>
+	
     <select id="getUserInfo" parameterType="String" resultType="data.dto.UserDto">
        	select *
    		from "user"

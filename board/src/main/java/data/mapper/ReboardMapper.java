@@ -10,11 +10,11 @@ import data.dto.ReboardDto;
 @Mapper
 public interface ReboardMapper {
 	public int getReboardCount(int board_num);
-	public List<ReboardDto> boardByUser(Map<String, Object> map);
+	public List<ReboardDto> reboardByUser(int board_num);
 	//글 작성
-	public void insertBoard(ReboardDto dto);
+	public void insertReboard(ReboardDto dto);
 	//수정
-	public void updateBoard(ReboardDto dto);
+	public void updateReboard(ReboardDto dto);
 	//삭제
-	public void deleteBoard(ReboardDto dto);
+	public void deleteReboard(int reboard_num);
 }

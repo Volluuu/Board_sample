@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import data.dto.UserDto;
 import data.mapper.UserMapper;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @RestController
 @CrossOrigin
@@ -34,5 +36,23 @@ public class UserController {
 	    public int emailCheck(@RequestParam String user_email) {
 	        return userMapper.emailCheck(user_email);
 	    }
-
+	 
+	 @RequestMapping("/logIn")
+	 public String signIn(@RequestBody UserDto dto, HttpServletRequest request) {
+	 	UserDto signIn = userMapper.logIn(dto);
+	 	HttpSession session = request.getSession();				
+	 	if (signIn != null) {
+	 		session.setAttribute("signIn", signIn);
+	 		return "redirect:/";
+	 	} else {
+	 		session.setAttribute("signIn", null);
+	 		return "redirect:/login";
+	 	}
+	 }
+	 // 로그아웃
+	 @RequestMapping("/logout")
+	 public String logout(HttpSession session) {
+	 	session.invalidate();
+	 	return "redirect:/login";
+	 }
 }

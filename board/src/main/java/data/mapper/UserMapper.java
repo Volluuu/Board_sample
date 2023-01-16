@@ -7,6 +7,8 @@ import data.dto.UserDto;
 @Mapper
 public interface UserMapper {
 	
+	//test용 유저정보 받아오기
+	public UserDto getTestUser();
 	//이메일을 통한 유저 정보
 	public UserDto getUserInfo(String user_email);
 
@@ -16,6 +18,9 @@ public interface UserMapper {
 
 //    // 이메일 중복 체크
     public int emailCheck(String user_email);
+    
+    //로그인
+    public UserDto logIn(UserDto dto);
 //
 //    // 핸드폰 중복 체크
 //    public int idCheck(String user_id);
