@@ -13,7 +13,8 @@
     
     <select id="boardByUser" parameterType="Map" resultType="Map">
         select *
-   		from "board"
+   		from "board" order by board_num desc
+   		limit #{perPage} offset #{startNum}
     </select>
     
     <select id="getBoardData" parameterType="int" resultType="data.dto.BoardDto">

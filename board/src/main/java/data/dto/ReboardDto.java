@@ -14,4 +14,6 @@ public class ReboardDto {
 	private int board_num;
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm",timezone = "Asia/Seoul")
     private Timestamp reboard_writeday;
+	
+	private String user_id;
 }

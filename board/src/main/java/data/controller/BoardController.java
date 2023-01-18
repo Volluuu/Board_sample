@@ -31,7 +31,7 @@ public class BoardController {
 	UserMapper userMapper;
 	
 	 @GetMapping("/admin")
-	 	public UserDto userInfo() {
+	 public UserDto userInfo() {
 		 return userMapper.getTestUser();
 	 }
 	
@@ -41,8 +41,9 @@ public class BoardController {
 
       //페이징처리
       int totalCount = boardMapper.getBoardTortal();
+      System.out.println("tcnt:"+totalCount);
       
-      int perPage = 10;
+      int perPage = 5;
       int perBlock = 5;
       int startNum;
       int startPage;
@@ -65,6 +66,8 @@ public class BoardController {
       //각페이지당 출력할 시작번호 구하기
       no = totalCount - (currentPage - 1) * perPage;
 
+      System.out.println("page:"+perPage);
+      System.out.println("sNum:"+startNum);
       //페이지에서 보여질 글만 가져오기
       Map<String, Object> map = new HashMap<>();
       map.put("startNum", startNum);
@@ -81,7 +84,7 @@ public class BoardController {
       Map<String, Object> smap = new HashMap<>();
       smap.put("list", list);
       smap.put("totalCount", totalCount);
-      smap.put("tarr", barr);
+      smap.put("barr", barr);
       smap.put("startPage", startPage);
       smap.put("endPage", endPage);
       smap.put("no", no);

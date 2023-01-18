@@ -13,6 +13,7 @@ public class BoardDto {
 	private String board_content;
 	private int user_num;
 	private int reboard_num;
+	
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
     private Timestamp board_writeday;
 	
