@@ -21,7 +21,7 @@ import data.mapper.BoardMapper;
 import data.mapper.UserMapper;
 
 @RestController
-@CrossOrigin
+@CrossOrigin (origins = "http://localhost:9003")
 @RequestMapping("/board")
 public class BoardController {
 	

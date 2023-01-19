@@ -1,19 +1,16 @@
 package data.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor //모든 필드값을 파라미터로 받는 생성자 생성
+@NoArgsConstructor //파라미터가 없는 기본 생성자 생성
 public class LoginDto {
 
 	private String user_id;
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private String user_pass;
 }

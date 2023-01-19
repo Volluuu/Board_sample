@@ -1,4 +1,5 @@
-//package data.filter;
+//package data.etc;
+
 //
 //import lombok.RequiredArgsConstructor;
 //import org.springframework.security.core.Authentication;
@@ -17,7 +18,7 @@
 //import java.io.IOException;
 //
 //@RequiredArgsConstructor
-//public class JwtFilter extends OncePerRequestFilter {
+//public class JwtFilter22 extends OncePerRequestFilter {
 //
 //    public static final String AUTHORIZATION_HEADER = "Authorization";
 //    public static final String BEARER_PREFIX = "Bearer ";

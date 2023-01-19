@@ -29,7 +29,6 @@
         values (#{user_name},#{user_pass},#{user_email},#{user_id},1)
     </insert>
     <!--    아이디 중복 체크-->
-    
     <select id="idCheck" parameterType="String" resultType="int">
         select count(*)
         from "user"
@@ -41,9 +40,21 @@
         where user_num = #{user_num} and user_pass = #{user_pass}
     </select>
     
+     <select id="findUser" resultType="data.dto.UserDto">
+      SELECT user_id, user_pass, auth
+      FROM "user"
+      WHERE user_id = #{user_id}
+    </select>
+
+    <select id="findUserId" resultType="data.dto.UserDto">
+      SELECT user_num
+      FROM "user"
+      WHERE user_id = #{user_id};
+    </select>
+    
     <update id="passChange" parameterType="data.dto.UserDto">
     	update "user"
-        set user_pass=#{user_pass}
+        set user_pass = #{user_pass}
         where user_num = #{user_num}
     </update>
 

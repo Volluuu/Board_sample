@@ -16,7 +16,7 @@ import data.dto.ReboardDto;
 import data.mapper.ReboardMapper;
 
 @RestController
-@CrossOrigin
+@CrossOrigin (origins = "http://localhost:9003")
 @RequestMapping("/reboard")
 public class ReboardController {
 	@Autowired
